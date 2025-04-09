@@ -92,7 +92,7 @@ resource "aws_lambda_function" "image_converter" {
   function_name = "image_converter"
   role          = aws_iam_role.lambda_execution_role.arn
   handler       = "lambda_function.lambda_handler"
-  runtime       = "python3.9"
+  runtime       = "python3.12"
   timeout       = 30
   memory_size   = 256
 
@@ -110,7 +110,7 @@ resource "aws_lambda_function" "image_converter" {
 
 resource "aws_lambda_layer_version" "pillow_layer" {
   layer_name = "pillow_layer"
-  compatible_runtimes = ["python3.9"]
+  compatible_runtimes = ["python3.12"]
 
   filename = "pillow_layer.zip"
 }
