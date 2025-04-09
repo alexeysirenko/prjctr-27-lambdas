@@ -98,6 +98,8 @@ resource "aws_lambda_function" "image_converter" {
 
   source_code_hash = data.archive_file.lambda_zip.output_base64sha256
 
+  layers = [aws_lambda_layer_version.pillow_layer.arn]
+
   environment {
     variables = {
       SOURCE_BUCKET      = var.source_bucket_name

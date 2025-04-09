@@ -215,5 +215,6 @@ terraform.rc
 # End of https://www.toptal.com/developers/gitignore/api/terraform
 
 pillow_layer.zip
+lambda_function.zip
 /.idea
 /.terraform.lock.hcl
